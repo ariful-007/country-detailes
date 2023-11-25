@@ -26,8 +26,9 @@ fetch(url)
 .then(data => getDetailesData(data))
 }
 
+const detailes = document.querySelector('.detailes')
 function getDetailesData(data){
-  const detailes = document.querySelector('.detailes')
+    clare();
   const div = document.createElement('div')
   div.classList.add('top')
   div.innerHTML=`
@@ -43,8 +44,11 @@ function getDetailesData(data){
   <h3>Tld : ${data[0].tld[0]}</h3>
   `
   detailes.appendChild(div)
-  main.style.display='none'
 }
 
-//      
+function clare(){
+  while(detailes.firstChild){
+    detailes.removeChild(detailes.firstChild)
+  }
+}    
 
